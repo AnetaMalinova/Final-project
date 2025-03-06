@@ -1,0 +1,280 @@
+:root {
+  --dark-color: #222;
+  --light-color: #fefefe;
+  --grey-color: #585858;
+  --padding-section: 48px 80px;
+
+  --font-heading: 24px;
+  --font-big: 20px;
+  --font-small: 16px;
+
+  --line-heading: 36px;
+  --line-big: 30px;
+  --line-small: 24px;
+
+  --gap-small: 8px;
+  --gap-half-small: 4px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+
+  background: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  background-color: #fceee7;
+}
+
+/*---HEADER---*/
+
+.header {
+  display: flex;
+  padding: var(--padding-section);
+  align-items: center;
+  gap: 30px;
+  align-self: stretch;
+}
+
+.header p {
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-small);
+  flex: 1 0 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: var(--gap-small);
+}
+
+.primary-heading {
+  color: var(--dark-color);
+  font-size: var(--font-big);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-big);
+}
+
+.secondary-heading {
+  color: var(--grey-color);
+  font-size: var(--font-big);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-big);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gap-half-small);
+  position: relative; /* Pro umístění pseudo-elementu */
+}
+
+.nav-menu::after {
+  content: ""; /* Vytvoří prázdný pseudo-element */
+  position: absolute;
+  bottom: 0; /* Umístí podtržení na spodní okraj */
+  left: 0;
+  width: 0; /* Začíná s nulovou šířkou */
+  height: 2px; /* Výška podtržení */
+  background-color: var(--dark-color); /* Barva podtržení */
+  transition: width 0.3s ease-out; /* Plynulý přechod šířky */
+}
+
+.nav-menu:hover::after {
+  width: 100%; /* Při hoveru se šířka podtržení roztáhne na 100% */
+  text-underline-offset: 5px; /* Vzdálenost podtržení od textu */
+}
+
+.nav-menu-text {
+  color: var(--dark-color);
+  font-size: var(--font-big);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-big);
+  text-decoration: none;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gap-half-small);
+}
+
+.nav-menu-icon {
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+/*---MAIN---*/
+.main {
+  display: flex;
+  padding: 24px 80px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
+
+  height: auto;
+  overflow: auto;
+}
+
+.left-side {
+  width: 35%;
+}
+
+.left-side img {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 32px;
+  flex: 1 0 0;
+  align-self: flex-start;
+  max-width: 45%;
+}
+
+.right-side-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+h1 {
+  margin: 0;
+  align-self: stretch;
+  font-size: var(--font-heading);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-heading);
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--font-big);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--line-big);
+}
+
+.right-side-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.basic-text {
+  margin: 0;
+  font-size: var(--font-small);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--line-small);
+}
+
+.button-text {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gap-half-small);
+  position: relative; /* Pro umístění pseudo-elementu */
+
+  color: var(--dark-color);
+  font-size: var(--font-big);
+  font-style: normal;
+  font-weight: 700;
+  line-height: var(--line-big);
+  text-decoration: none;
+}
+
+.button-text::after {
+  content: ""; /* Vytvoří prázdný pseudo-element */
+  position: absolute;
+  bottom: 0; /* Umístí podtržení na spodní okraj */
+  left: 0;
+  width: 0; /* Začíná s nulovou šířkou */
+  height: 2px; /* Výška podtržení */
+  background-color: var(--dark-color); /* Barva podtržení */
+  transition: width 0.3s ease-out; /* Plynulý přechod šířky */
+}
+
+.button-text:hover::after {
+  width: 100%; /* Při hoveru se šířka podtržení roztáhne na 100% */
+  text-underline-offset: 5px; /* Vzdálenost podtržení od textu */
+}
+
+/*---FOOTER---*/
+
+.footer {
+  display: flex;
+  padding: var(--padding-section);
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-small);
+  align-self: stretch;
+
+  margin-top: auto;
+  height: auto;
+}
+
+.footer-text {
+  margin: 0;
+  font-size: var(--font-small);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--line-small);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.nav-links-text {
+  font-size: var(--font-small);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--line-small);
+  text-decoration: none; /* Zruší výchozí podtržení */
+  color: var(--dark-color);
+  position: relative; /* Pro umístění pseudo-elementu */
+}
+
+.nav-links-text::after {
+  content: ""; /* Vytvoří prázdný pseudo-element */
+  position: absolute;
+  bottom: 0; /* Umístí podtržení na spodní okraj textu */
+  left: 0;
+  width: 0; /* Začíná s nulovou šířkou */
+  height: 2px; /* Výška podtržení */
+  background-color: var(--dark-color); /* Barva podtržení */
+  transition: width 0.3s ease-out; /* Plynulý přechod šířky */
+}
+
+.nav-links-text:hover::after {
+  width: 100%; /* Při hoveru se šířka podtržení roztáhne na 100% */
+  text-underline-offset: 5px; /* Vzdálenost podtržení od textu */
+}
